@@ -4,6 +4,7 @@ using Bhaptics.SDK2;
 public class TimeWarningController : MonoBehaviour
 {
     [SerializeField] private string eventName = "time_warning";
+    [SerializeField] private bool enableHaptics = false;
     [SerializeField, Min(0f)] private float startSeconds = 35f;
 
     [SerializeField] private float remainingSeconds;
@@ -89,14 +90,15 @@ public class TimeWarningController : MonoBehaviour
                 break;
         }
 
+        warningCountdown = interval;
         StopCurrentPulse();
 
-        activeRequestId = BhapticsLibrary.Play(
-            eventName,
-            intensity: intensity
-        );
+        if (!enableHaptics || !BhapticsSDK2.IsInitialized)
+        {
+            return;
+        }
 
-        warningCountdown = interval;
+        activeRequestId = BhapticsLibrary.Play(eventName, intensity: intensity);
 
         if (activeRequestId < 0)
         {
