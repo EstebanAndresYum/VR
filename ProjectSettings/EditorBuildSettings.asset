@@ -6,8 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/CrowbarProjectionVR.unity
+    guid: 0425edaa45baa6749952555bf8924eda
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 16eb96cee3c1aaa46a7892091d74eff7, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6e2cc3ff2e1d7c64583c8e5beccc56e0, type: 2}
   m_UseUCBPForAssetBundles: 0
