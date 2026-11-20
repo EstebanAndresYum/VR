@@ -173,7 +173,7 @@ namespace VR.CrowbarPuzzle.Editor
             Vector3 localLongAxis = AxisVector(splitAxis);
             Quaternion alignLongAxisToUp = Quaternion.FromToRotation(localLongAxis, Vector3.up);
             Quaternion assembledRotation = Quaternion.AngleAxis(-24f, Vector3.forward) * alignLongAxisToUp;
-            float assembledScale = 1.55f / Component(sourceMesh.bounds.size, splitAxis);
+            float assembledScale = 1.0f / Component(sourceMesh.bounds.size, splitAxis);
 
             Camera camera = CreateCamera(targetViewpoint + Vector3.left * 0.8f);
             CreateLighting();
