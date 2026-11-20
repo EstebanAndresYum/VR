@@ -49,8 +49,8 @@ namespace VR.CrowbarPuzzle
         [Header("Scoring")]
         [Tooltip("Average viewport-space distance that produces a score of zero.")]
         [SerializeField, Min(0.001f)] private float zeroScoreViewportDistance = 0.12f;
-        [SerializeField, Range(0f, 1f)] private float completionThreshold = 0.9f;
-        [SerializeField, Min(0f)] private float requiredHoldSeconds = 0.4f;
+        [SerializeField, Range(0f, 1f)] private float completionThreshold = 0.97f;
+        [SerializeField, Min(0f)] private float requiredHoldSeconds = 1.5f;
 
         [Header("Completion")]
         [SerializeField] private GameObject[] fragmentObjects = Array.Empty<GameObject>();

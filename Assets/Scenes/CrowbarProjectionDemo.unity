@@ -1531,8 +1531,8 @@ MonoBehaviour:
     second: {fileID: 1227349897}
     score: 0
   zeroScoreViewportDistance: 0.12
-  completionThreshold: 0.9
-  requiredHoldSeconds: 0.4
+  completionThreshold: 0.97
+  requiredHoldSeconds: 1.5
   fragmentObjects:
   - {fileID: 1445572137}
   - {fileID: 1357009519}

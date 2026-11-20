@@ -2,7 +2,7 @@
 
 `CrowbarProjectionPuzzle` compares two cut joints from the active viewpoint. Each side of a joint owns three anchors: center, horizontal and vertical. The anchors are projected with `Camera.WorldToViewportPoint`, and the average screen-space distance becomes the joint score.
 
-The puzzle completes only when both joints are at least 90% aligned for 0.4 seconds. Using the lower joint score prevents one perfect joint from hiding a badly aligned joint.
+The puzzle completes only when both joints are at least 97% aligned for 1.5 seconds. Using the lower joint score prevents one perfect joint from hiding a badly aligned joint.
 
 Use **Tools > Crowbar Puzzle > Build Demo Scene** to generate:
 

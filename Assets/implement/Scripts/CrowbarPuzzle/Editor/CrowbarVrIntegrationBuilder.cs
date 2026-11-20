@@ -68,6 +68,25 @@ namespace VR.CrowbarPuzzle.Editor
             cameraRig.name = "OVRCameraRig";
             cameraRig.transform.SetPositionAndRotation(new Vector3(-0.8f, 0f, 0f), Quaternion.identity);
 
+            OVRManager ovrManager = cameraRig.GetComponent<OVRManager>();
+            if (ovrManager == null)
+            {
+                Object.DestroyImmediate(cameraRig);
+                throw new System.InvalidOperationException("OVRCameraRig contains no OVRManager component.");
+            }
+
+            SerializedObject serializedManager = new SerializedObject(ovrManager);
+            SerializedProperty trackingOriginProperty = serializedManager.FindProperty("_trackingOriginType");
+            if (trackingOriginProperty == null)
+            {
+                Object.DestroyImmediate(cameraRig);
+                throw new System.InvalidOperationException("OVRManager tracking origin setting was not found.");
+            }
+
+            trackingOriginProperty.intValue = (int)OVRManager.TrackingOrigin.FloorLevel;
+            serializedManager.ApplyModifiedPropertiesWithoutUndo();
+            EditorUtility.SetDirty(ovrManager);
+
             GameObject interactionRig =
                 (GameObject)PrefabUtility.InstantiatePrefab(interactionRigPrefab, scene);
             interactionRig.name = "OVRComprehensiveInteractionRig";
