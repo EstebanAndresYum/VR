@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DualDialHapticPuzzle.unity
+    guid: 13914cf20c3644f078b97b1305759a94
+  - enabled: 1
     path: Assets/Scenes/CrowbarProjectionVR.unity
     guid: 0425edaa45baa6749952555bf8924eda
   m_configObjects:
